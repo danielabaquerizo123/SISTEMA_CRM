@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const actividadesController_1 = require("../controllers/actividadesController");
+const asyncHandler_1 = require("../utils/asyncHandler");
+const router = (0, express_1.Router)();
+router.get("/", (0, asyncHandler_1.asyncHandler)(actividadesController_1.getActividades));
+router.post("/", (0, asyncHandler_1.asyncHandler)(actividadesController_1.createActividad));
+router.delete("/:id", (0, asyncHandler_1.asyncHandler)(actividadesController_1.deleteActividad));
+exports.default = router;
